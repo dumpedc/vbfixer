@@ -137,7 +137,7 @@ class PHPFixer(Fixer):
             with codecs.open(path, 'r', encoding) as f:
                 for l_num, line in enumerate(f.readlines()):
                     func(l_num, line)
-        except LookupError:
+        except (LookupError, magic.MagicException,):
             raise WontFix('Encoding problem')
         else:
             return encoding
