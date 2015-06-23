@@ -1,3 +1,5 @@
 click
 pygments
 python-magic
+peewee
+MySQL-python
