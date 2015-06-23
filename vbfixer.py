@@ -364,7 +364,7 @@ def parse(path, verbose, charset, silent, no_mysql, inspections):
                 full_path = os.path.join(directory, f)
                 if is_php(full_path):
                     files.append(full_path)
-                    if directory == 'includes' and f == 'config.php':
+                    if os.path.basename(os.path.normpath(directory)) == 'includes' and f == 'config.php':
                         configs.append(full_path)
     else:
         if not is_php(path):
